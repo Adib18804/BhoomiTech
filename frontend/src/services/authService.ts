@@ -1,4 +1,4 @@
-import api from '../utils/api';
+import api, { DEMO_TOKEN_PREFIX } from '../utils/api';
 
 export interface RegisterData {
   email: string;
@@ -36,7 +36,7 @@ const DEMO_PASSWORD = import.meta.env.VITE_DEMO_PASSWORD;
 
 function buildDemoAuthResponse(email: string): AuthResponse {
   return {
-    access_token: `demo-session-${Date.now()}`,
+    access_token: `${DEMO_TOKEN_PREFIX}${Date.now()}`,
     refresh_token: `demo-refresh-${Date.now()}`,
     token_type: 'bearer',
     user: {

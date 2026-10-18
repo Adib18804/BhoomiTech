@@ -1,4 +1,4 @@
-import api from '../utils/api';
+import api, { DEMO_TOKEN_PREFIX } from '../utils/api';
 
 export interface DashboardCase {
   case_id: string;
@@ -79,8 +79,66 @@ export interface AdminDashboard {
   };
 }
 
+// Synthetic dataset shown only to frontend-only demo sessions (see the
+// authService login bypass) so judges can explore the dashboard with no
+// backend. Mirrors the CitizenDashboard shape; all values are fake.
+function buildDemoCitizenDashboard(): CitizenDashboard {
+  const now = Date.now();
+  const hoursAgo = (h: number) => new Date(now - h * 3600_000).toISOString();
+  const demoCase = (
+    n: number,
+    risk: string,
+    status: string,
+    initiatedHoursAgo: number,
+    completedHoursAgo: number | null,
+    hasReport: boolean
+  ): DashboardCase => ({
+    case_id: `DEMO-2026-00${n}`,
+    status,
+    overall_risk_level: risk,
+    district_name: 'Dhaka',
+    upazila_name: 'Savar',
+    mouza_name: 'Bagbari',
+    survey_type: 'RS',
+    khatian_no: `${1180 + n}`,
+    dag_no: `${217 + n}`,
+    parcel_id: `DHK-SVR-RS-1180-${217 + n}`,
+    initiated_at: hoursAgo(initiatedHoursAgo),
+    completed_at: completedHoursAgo === null ? null : hoursAgo(completedHoursAgo),
+    has_report: hasReport,
+  });
+
+  const cases = [
+    demoCase(1, 'REVIEW_REQUIRED', 'COMPLETED', 96, 90, true),
+    demoCase(2, 'LOW_CONCERN', 'COMPLETED', 240, 232, true),
+    demoCase(3, 'CRITICAL_SIGNAL', 'INITIATED', 6, null, false),
+  ];
+
+  return {
+    totals: { total_cases: 3, completed_cases: 2, total_reports: 2 },
+    risk_summary: { LOW_CONCERN: 1, REVIEW_REQUIRED: 1, CRITICAL_SIGNAL: 1 },
+    latest_case: cases[0],
+    recent_cases: cases,
+    recent_parcels: cases.map((c) => ({
+      parcel_id: c.parcel_id!,
+      district_name: c.district_name,
+      upazila_name: c.upazila_name,
+      mouza_name: c.mouza_name,
+      survey_type: c.survey_type,
+      khatian_no: c.khatian_no,
+      dag_no: c.dag_no,
+      area_decimal: 90 + Number(c.dag_no) % 40,
+      last_checked_at: c.completed_at || c.initiated_at,
+    })),
+  };
+}
+
 class DashboardService {
   async getCitizenDashboard(): Promise<CitizenDashboard> {
+    if (localStorage.getItem('access_token')?.startsWith(DEMO_TOKEN_PREFIX)) {
+      return buildDemoCitizenDashboard();
+    }
+
     const response = await api.get('/dashboard/citizen');
     return response.data;
   }
