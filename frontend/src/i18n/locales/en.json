@@ -1,0 +1,712 @@
+{
+  "common": {
+    "appName": "BhoomiTech",
+    "tagline": "Check Before You Buy",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "filter": "Filter",
+    "clear": "Clear",
+    "submit": "Submit",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "close": "Close",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "home": "Home",
+    "checkLand": "Check Land",
+    "howItWorks": "How It Works",
+    "verificationGuide": "Verification Guide",
+    "about": "About",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "adminDashboard": "Admin Dashboard",
+    "superAdmin": "Super Admin",
+    "myChecks": "My Checks",
+    "reports": "Reports",
+    "landBuyingGuide": "Land Buying Guide",
+    "legalUpdates": "Legal & Land Updates",
+    "manageLegalUpdates": "Manage Updates",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  },
+  "home": {
+    "heroSubtitle": "Review available land records and identify potential inconsistencies before proceeding with a land transaction.",
+    "demoNotice": "Demonstration prototype using synthetic data — not a government service.",
+    "featuresTitle": "Key Features",
+    "featuresSubtitle": "Everything you need to review land records before a transaction.",
+    "features": {
+      "map": {
+        "title": "Interactive Map",
+        "body": "Visualize land parcels with cadastral map integration."
+      },
+      "risk": {
+        "title": "Risk Assessment",
+        "body": "Identify potential issues before purchase."
+      },
+      "check": {
+        "title": "Comprehensive Check",
+        "body": "Ownership, mutation, cases, and transaction history."
+      },
+      "users": {
+        "title": "Multi-User Access",
+        "body": "Citizens, admins, and institutional users."
+      }
+    },
+    "whatWeCheckTitle": "What BhoomiTech Checks",
+    "whatWeCheckSubtitle": "Each verification reviews the recorded land data across these dimensions and reports what the data says.",
+    "workflowTitle": "How It Works",
+    "workflowSubtitle": "A simple four-step flow from selecting a plot to reviewing a risk summary.",
+    "stepLabel": "Step",
+    "workflow": {
+      "select": {
+        "title": "Select the land",
+        "body": "Choose division, district, upazila and mouza, then enter the survey type, khatian and dag number."
+      },
+      "seller": {
+        "title": "Enter seller claims",
+        "body": "Record the ownership, share and sale area as claimed by the seller."
+      },
+      "verify": {
+        "title": "Run the check",
+        "body": "The platform compares the seller claim against the recorded land data and lists findings."
+      },
+      "decide": {
+        "title": "Review and decide",
+        "body": "Review each finding and the overall risk level, then generate an informational report."
+      }
+    },
+    "riskTitle": "Risk Levels Explained",
+    "riskSubtitle": "Each check contributes to an overall risk level that summarises what the recorded data suggests.",
+    "riskDescriptions": {
+      "LOW_CONCERN": "The recorded data is consistent with the seller claim; no significant inconsistencies were found.",
+      "REVIEW_REQUIRED": "Some records differ or are missing. Verify these points with the relevant office before proceeding.",
+      "HIGH_ATTENTION": "Multiple or serious inconsistencies were found. Proceed only after careful verification.",
+      "CRITICAL_SIGNAL": "Critical inconsistencies such as ownership mismatch or conflicting records were found. Seek professional advice.",
+      "INSUFFICIENT_DATA": "Not enough recorded data is available to complete a meaningful review for this selection."
+    },
+    "beforeYouBuyTitle": "Before You Buy Land",
+    "beforeYouBuySubtitle": "A short checklist of the most important points to confirm before a land transaction.",
+    "checklist": {
+      "khatian": "Confirm the khatian (record of rights) matches the seller.",
+      "dag": "Confirm the dag number and total area match the plot offered.",
+      "ownership": "Check all recorded owners and their shares, especially for joint ownership.",
+      "mutation": "Check whether name transfer (mutation) is approved or still pending.",
+      "cases": "Look for legal case signals, government/khas status and acquisition notices."
+    },
+    "viewGuide": "Open the full Land Buying Guide",
+    "syntheticDataNotice": "This platform uses synthetic demonstration data for prototype purposes."
+  },
+  "landGuide": {
+    "title": "Land Buying Guide",
+    "subtitle": "A step-by-step checklist citizens can follow before buying land in Bangladesh.",
+    "notice": "These checks help identify potential inconsistencies before proceeding. They do not guarantee that a transaction is safe, and they are not legal advice.",
+    "stepLabel": "Step",
+    "checkInBhoomiTech": "Run a check in BhoomiTech",
+    "steps": [
+      {
+        "title": "Confirm the land identity",
+        "body": "Identify the district, upazila, mouza, survey type, khatian number and dag number of the plot you intend to buy. Mismatched identifiers are the most common source of confusion."
+      },
+      {
+        "title": "Check the khatian (record of rights)",
+        "body": "Obtain the current khatian and confirm the recorded owner names match the seller. Check whether the khatian is RS, SA, BS or CS and whether a later survey supersedes it."
+      },
+      {
+        "title": "Verify the dag and area",
+        "body": "Confirm the dag number and total area in decimal. Compare the area offered for sale against the recorded area of the plot."
+      },
+      {
+        "title": "Review recorded ownership and share",
+        "body": "Check all recorded owners and their shares. If land is jointly owned, ensure every owner (or a lawful representative) is part of the transaction."
+      },
+      {
+        "title": "Review mutation (name transfer) status",
+        "body": "Check whether mutation has been applied for and approved. Pending mutation can indicate that ownership has not yet been updated in the record."
+      },
+      {
+        "title": "Review inheritance / succession records",
+        "body": "If the land was inherited, check whether a succession record exists and whether the recorded share is consistent with the declared heirs."
+      },
+      {
+        "title": "Check for legal cases and government status",
+        "body": "Look for pending or resolved cases, disputes, acquisition notices and government or khas land status that could affect the plot."
+      },
+      {
+        "title": "Review transaction and registration history",
+        "body": "Review past sale deeds and registration history. An unregistered deed does not transfer legal title, and overlapping sale claims are a warning sign."
+      },
+      {
+        "title": "Confirm with official sources before paying",
+        "body": "Before paying or registering, confirm documents with the relevant land office and, where needed, a qualified legal professional. Keep receipts and official copies."
+      }
+    ]
+  },
+  "legalUpdatesPage": {
+    "title": "Legal & Land Updates",
+    "subtitle": "Administrator-published land and registration updates from official sources.",
+    "allCategories": "All categories",
+    "filterByCategory": "Filter by category",
+    "noUpdates": "No published updates are available yet.",
+    "loadError": "Could not load land and registration updates.",
+    "details": "Details",
+    "publishedOn": "Published",
+    "effectiveOn": "Effective",
+    "officialSource": "Official source",
+    "readMore": "Read more",
+    "readLess": "Show less",
+    "sourceNote": "Updates reference their official source. BhoomiTech republishes informational summaries and is not an official government system.",
+    "status": {
+      "draft": "Draft",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "categories": {
+      "Mutation": "Mutation",
+      "Land Records": "Land Records",
+      "Land Map": "Land Map",
+      "Land Tax": "Land Tax",
+      "Acquisition": "Acquisition",
+      "Registration": "Registration",
+      "Land Administration": "Land Administration",
+      "General Land Service": "General Land Service"
+    }
+  },
+  "legalUpdateManage": {
+    "title": "Legal & Land Update Management",
+    "subtitle": "Create and manage land and registration updates. Published updates are shown to citizens in the updates feed and ticker.",
+    "newUpdate": "New Update",
+    "editUpdate": "Edit Update",
+    "save": "Save Update",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirmDelete": "Delete this update? Published updates are archived instead of being permanently removed.",
+    "noUpdates": "No updates yet. Create the first update.",
+    "loadError": "Could not load updates.",
+    "saveError": "Could not save the update. Please check the fields and try again.",
+    "deleteError": "Could not delete the update.",
+    "created": "Update created.",
+    "updated": "Update saved.",
+    "deleted": "Update removed.",
+    "colTitle": "Title",
+    "colCategory": "Category",
+    "colStatus": "Status",
+    "colUpdated": "Updated",
+    "colActions": "Actions",
+    "titleEn": "Title (English)",
+    "titleBn": "Title (বাংলা)",
+    "summaryEn": "Summary (English)",
+    "summaryBn": "Summary (বাংলা)",
+    "category": "Category",
+    "publicationDate": "Publication date",
+    "effectiveDate": "Effective date",
+    "sourceName": "Official source name",
+    "sourceUrl": "Official source URL",
+    "language": "Language",
+    "status": "Status",
+    "scope": "Scope",
+    "nationalScope": "National (all jurisdictions)",
+    "languages": {
+      "en": "English",
+      "bn": "Bengali",
+      "both": "Both"
+    },
+    "notice": "Only enter information from official sources. Do not invent notices or legal changes."
+  },
+  "ticker": {
+    "title": "Land & Registration Updates",
+    "newsLabel": "News",
+    "viewAll": "View all",
+    "loading": "Loading updates...",
+    "empty": "Latest land & registration updates will appear here."
+  },
+  "myChecks": {
+    "title": "My Checks",
+    "subtitle": "All land verification cases you have run.",
+    "noChecks": "You have not run any verification yet.",
+    "startCheck": "Check a Land",
+    "loadError": "Could not load your verification cases.",
+    "retry": "Retry",
+    "land": "Land",
+    "checkedOn": "Checked on",
+    "status": "Status",
+    "risk": "Risk level",
+    "report": "Report",
+    "viewResult": "View result",
+    "reportYes": "Available",
+    "reportNo": "Not generated"
+  },
+  "reportsPage": {
+    "title": "Reports",
+    "subtitle": "Due-diligence reports generated for your verification cases.",
+    "noReports": "No reports have been generated yet.",
+    "loadError": "Could not load your reports.",
+    "retry": "Retry",
+    "reportId": "Report ID",
+    "caseId": "Case ID",
+    "language": "Language",
+    "createdOn": "Generated on",
+    "risk": "Risk level",
+    "view": "View",
+    "download": "Download PDF",
+    "notice": "Reports are informational due-diligence aids generated from synthetic demonstration data. They are not government certificates or legal opinions."
+  },
+  "chouhaddi": {
+    "title": "Chouhaddi (Four-Side Boundaries)",
+    "north": "North",
+    "south": "South",
+    "east": "East",
+    "west": "West",
+    "source": "Source",
+    "notRecorded": "Not recorded",
+    "note": "Four-side descriptions shown here come from synthetic demonstration data. This is not a legal cadastral boundary determination and does not replace an official survey."
+  },
+  "inheritance": {
+    "title": "Inheritance / Heirship Review",
+    "subtitle": "Land-ownership consistency review based on available records.",
+    "ownershipType": "Ownership type",
+    "successionRecord": "Succession record available",
+    "declaredHeirCount": "Declared heir count",
+    "recordedInheritedShare": "Recorded inherited share",
+    "recordedOwnerShare": "Recorded owner share",
+    "expectedShare": "Expected share per available record",
+    "successionStatus": "Succession status",
+    "recordReference": "Supporting record reference",
+    "result": "Review result",
+    "yes": "Yes",
+    "no": "No",
+    "notLegalAdvice": "This review is a land-ownership consistency check only. It is not a legal conclusion, and BhoomiTech does not search family, social media, or government databases.",
+    "results": {
+      "potential_inheritance_share_inconsistency": "Potential inheritance/share inconsistency",
+      "no_matching_inconsistency": "No matching inconsistency found in available synthetic data",
+      "insufficient_data": "Insufficient data"
+    }
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "mobile": "Mobile Number",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "fullName": "Full Name",
+    "forgotPassword": "Forgot Password?",
+    "createAccount": "Create New Account",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?",
+    "citizenLogin": "Citizen Login",
+    "adminLogin": "Admin Login",
+    "superAdminLogin": "Super Admin Login",
+    "adminNote": "Admin accounts are created and managed by the authorized system administrator.",
+    "preferredLanguage": "Preferred Language",
+    "loginSuccess": "Login successful",
+    "registrationSuccess": "Registration successful",
+    "logoutSuccess": "Logout successful",
+    "demoModeNotice": "⚠️ Demo Mode: Use demo@example.com / Demo@2026 to explore the dashboard without a backend."
+  },
+  "verification": {
+    "title": "Land Verification",
+    "startNew": "Start New Verification",
+    "myVerifications": "My Verifications",
+    "caseId": "Case ID",
+    "status": "Status",
+    "riskLevel": "Risk Level",
+    "steps": {
+      "landIdentity": "Land Identity",
+      "plotLocation": "Plot Location",
+      "sellerInfo": "Seller Information",
+      "recordReview": "Record Review",
+      "verification": "Verification",
+      "result": "Result",
+      "report": "Report"
+    },
+    "landIdentifiers": {
+      "division": "Division",
+      "district": "District",
+      "upazila": "Upazila",
+      "mouza": "Mouza",
+      "surveyType": "Survey Type",
+      "khatian": "Khatian No",
+      "dag": "Dag No"
+    },
+    "findPlot": "Find Plot",
+    "runVerification": "Run Verification",
+    "generateReport": "Generate Report",
+    "checks": {
+      "Land Identity": "Land Identity",
+      "Ownership": "Ownership",
+      "Mutation": "Mutation",
+      "Legal Cases": "Legal Cases",
+      "Government Status": "Government Status",
+      "Acquisition": "Acquisition",
+      "Transaction History": "Transaction History",
+      "Historical Consistency": "Historical Consistency",
+      "Area/Share": "Area/Share",
+      "Cross-Record Consistency": "Cross-Record Consistency"
+    },
+    "result": {
+      "running": "Running Verification...",
+      "analyzing": "Analyzing land records and seller information",
+      "failed": "Verification Failed",
+      "backToSearch": "Back to Search",
+      "backToDashboard": "Back to Dashboard",
+      "syntheticNote": "This verification uses synthetic demonstration data for prototype purposes only.",
+      "overallStatus": "Overall Verification Status",
+      "riskScore": "Risk Score",
+      "totalChecks": "Total Checks",
+      "passed": "Passed",
+      "warnings": "Warnings",
+      "criticalIssues": "Critical Issues",
+      "findings": "Verification Findings",
+      "recommendation": "Recommendation",
+      "recommendedActions": "Recommended Actions",
+      "whatChecked": "What was checked",
+      "whatDataSays": "What the data says",
+      "whyThisMatters": "Why this matters",
+      "evidence": "Evidence / recorded values",
+      "whatToReview": "What to review",
+      "showDetails": "Show details",
+      "hideDetails": "Hide details",
+      "noDetails": "No additional recorded values for this finding.",
+      "reportComingSoon": "Report generation coming soon",
+      "reportGenerating": "Generating report...",
+      "reportReady": "Report ready",
+      "reportView": "View Report",
+      "reportDownload": "Download PDF",
+      "reportNotice": "This report is an informational due-diligence aid generated from synthetic demonstration data. It is not a government certificate and not a legal opinion.",
+      "reportError": "Could not generate the report. Please try again."
+    }
+  },
+  "landSearch": {
+    "subtitle": "Search for land parcel by administrative identifiers",
+    "notFound": "Land parcel not found",
+    "notFoundTitle": "Land Parcel Not Found",
+    "emptyRecord": "No demonstration record is available for this selection. Please choose another division, district, upazila or mouza.",
+    "selectDivision": "Select Division",
+    "selectDistrict": "Select District",
+    "selectUpazila": "Select Upazila",
+    "selectMouza": "Select Mouza",
+    "parcelInfo": "Land Parcel Information",
+    "landClass": "Land Class",
+    "notAvailable": "N/A",
+    "recordedOwnership": "Recorded Ownership",
+    "father": "Father",
+    "share": "Share",
+    "type": "Type",
+    "decimal": "decimal",
+    "continueVerification": "Continue to Verification"
+  },
+  "sellerInfo": {
+    "backToSearch": "Back to Land Search",
+    "subtitle": "Enter seller-provided ownership information for verification",
+    "selectedParcel": "Selected Land Parcel",
+    "totalArea": "Total Area",
+    "recordedOwnership": "Recorded Ownership (For Reference)",
+    "owner": "Owner",
+    "formTitle": "Seller-Provided Information",
+    "formSubtitle": "Enter the ownership and transaction information as claimed by the seller",
+    "ownerName": "Seller/Owner Name",
+    "ownerNamePlaceholder": "e.g., Md. Karim Ahmed",
+    "ownerNameHelp": "Enter the full name as provided by the seller",
+    "claimedShare": "Claimed Ownership Share (decimal)",
+    "sharePlaceholder": "e.g., 50.00",
+    "shareHelp": "Total land share claimed by the seller",
+    "transactionArea": "Transaction Area (decimal)",
+    "areaPlaceholder": "e.g., 25.00",
+    "areaHelp": "Area being sold in this transaction (cannot exceed total parcel area:",
+    "important": "Important",
+    "importantText": "This information will be compared against available records to identify potential inconsistencies. Accurate information is critical for reliable verification."
+  },
+  "dashboard": {
+    "subtitle": "Manage your land verification cases",
+    "startNewHelp": "Start a new land verification process",
+    "recentVerifications": "Recent Verifications",
+    "totalCases": "Total Cases",
+    "emptyState": "No verifications yet. Start your first verification to check land records.",
+    "totalChecks": "Total Checks Run",
+    "completedChecks": "Completed",
+    "totalReports": "Reports Generated",
+    "currentStatus": "Latest Result",
+    "viewLatestResult": "View Latest Result",
+    "noResultYet": "No result yet",
+    "recentCases": "Recent Checks",
+    "recentLandRefs": "Recent Land References",
+    "checkedOn": "Checked on",
+    "noReport": "No report",
+    "reportAvailable": "Report available",
+    "viewResult": "View Result",
+    "loadError": "Could not load your dashboard. Please try again.",
+    "retry": "Retry",
+    "loading": "Loading your dashboard...",
+    "khatian": "Khatian",
+    "dag": "Dag",
+    "caseId": "Case ID",
+    "checkALand": "Check a Land",
+    "checkALandHelp": "Start a new land due-diligence check",
+    "learnBeforeYouBuy": "Learn Before You Buy",
+    "learnBeforeYouBuyHelp": "Read the step-by-step land buying guide",
+    "beforeYouBuy": "Before You Buy Land",
+    "beforeYouBuySubtitle": "Review these items before proceeding with a land transaction.",
+    "beforeYouBuyItems": [
+      {
+        "title": "Khatian matches the seller",
+        "body": "Confirm the recorded owner names on the khatian match the person selling the land."
+      },
+      {
+        "title": "Dag number and area",
+        "body": "Confirm the dag number and total area match the plot being offered."
+      },
+      {
+        "title": "Recorded ownership shares",
+        "body": "Check all recorded owners and their shares, especially for jointly owned land."
+      },
+      {
+        "title": "Mutation status",
+        "body": "Check whether name transfer (mutation) is approved or still pending."
+      },
+      {
+        "title": "Inheritance / succession record",
+        "body": "For inherited land, check whether a succession record supports the recorded share."
+      },
+      {
+        "title": "Legal case signals",
+        "body": "Look for pending or resolved cases and disputes linked to the plot."
+      },
+      {
+        "title": "Government / khas status",
+        "body": "Check whether any part of the plot is recorded as government or khas land."
+      },
+      {
+        "title": "Acquisition notices",
+        "body": "Check for proposed or notified land acquisition that could affect the plot."
+      },
+      {
+        "title": "Transaction & registration history",
+        "body": "Review past sale deeds and whether they were properly registered."
+      },
+      {
+        "title": "Chouhaddi (four-side boundary)",
+        "body": "Review the recorded four-side boundary descriptions of the plot."
+      }
+    ]
+  },
+  "riskLevels": {
+    "LOW_CONCERN": "Low Concern",
+    "REVIEW_REQUIRED": "Review Required",
+    "HIGH_ATTENTION": "High Attention",
+    "CRITICAL_SIGNAL": "Critical Signal",
+    "INSUFFICIENT_DATA": "Insufficient Data"
+  },
+  "adminDash": {
+    "subtitle": "Platform overview: verification activity, security events and system health",
+    "totalCitizens": "Registered Citizens",
+    "totalCases": "Verification Cases",
+    "totalReports": "Reports Generated",
+    "totalParcels": "Land Parcels",
+    "dbStatus": "Database",
+    "dbConnected": "Connected",
+    "dbUnavailable": "Unavailable",
+    "riskDistribution": "Risk Level Distribution",
+    "statusDistribution": "Case Status Distribution",
+    "recentActivity": "Recent Verification Activity",
+    "securityEvents": "Recent Security Events",
+    "noActivity": "No verification activity yet",
+    "noSecurityEvents": "No recent security events",
+    "healthNote": "Live database probe executed for this view",
+    "loadError": "Could not load the admin dashboard. Please try again.",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "loading": "Loading admin dashboard...",
+    "jurisdictionTitle": "Assigned Jurisdiction",
+    "assignedUpazila": "Assigned Upazila",
+    "district": "District",
+    "globalScope": "Global scope (all jurisdictions)",
+    "noJurisdiction": "Your account has no assigned upazila. Contact the system administrator.",
+    "jurisdictionNote": "You can only view and manage land records within your assigned upazila. This is enforced on the server.",
+    "statMouzas": "Mouzas",
+    "statKhatians": "Khatian Records",
+    "statDags": "Dag Records",
+    "statParcels": "Parcels",
+    "statPendingUpdates": "Pending Updates",
+    "statVerificationCases": "Verification Cases",
+    "dataManagement": "Manage Land Records",
+    "mouza": "Mouza",
+    "selectMouza": "Select a mouza",
+    "selectMouzaHint": "Choose a mouza in your jurisdiction to review its land records.",
+    "noMouzas": "No mouzas available in your jurisdiction.",
+    "parcelId": "Parcel ID",
+    "khatian": "Khatian",
+    "dag": "Dag",
+    "area": "Area (decimal)",
+    "landClass": "Land Class",
+    "noParcels": "No parcels recorded in this mouza.",
+    "editChouhaddi": "Edit Chouhaddi",
+    "saveChouhaddi": "Save",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "chouhaddiUpdated": "Chouhaddi updated.",
+    "chouhaddiSaveError": "Could not update the Chouhaddi. Please try again.",
+    "chouhaddiNote": "Chouhaddi values are synthetic demonstration data used for review only.",
+    "north": "North",
+    "south": "South",
+    "east": "East",
+    "west": "West"
+  },
+  "superAdminDash": {
+    "title": "Application Administration",
+    "subtitle": "Manage application users, roles, audit trail and system settings",
+    "appAdminNotice": "Application administration only - not a government function.",
+    "appAdminNoteDetail": "The Super Admin role administers the BhoomiTech prototype application only. It does not confer, represent, or replace any government authority, ministry, or official land record function.",
+    "totalUsers": "Total Users",
+    "userManagement": "User & Role Management",
+    "searchPlaceholder": "Search name or email...",
+    "allRoles": "All roles",
+    "user": "User",
+    "role": "Role",
+    "status": "Status",
+    "lastLogin": "Last Login",
+    "actions": "Actions",
+    "active": "Active",
+    "inactive": "Deactivated",
+    "locked": "Temporarily locked (failed logins)",
+    "activate": "Activate",
+    "deactivate": "Deactivate",
+    "confirmActivate": "Activate account {{email}}?",
+    "confirmDeactivate": "Deactivate account {{email}}? The user will no longer be able to log in.",
+    "confirmRole": "Change role of {{email}} to {{role}}?",
+    "actionError": "The change could not be applied. Please try again.",
+    "roles": {
+      "citizen": "Citizen",
+      "admin": "Admin",
+      "super_admin": "Super Admin"
+    },
+    "auditLogs": "Recent Audit Trail",
+    "noAuditLogs": "No audit entries yet",
+    "settings": "System Settings",
+    "noSettings": "No system settings configured",
+    "loadError": "Could not load the super admin dashboard. Please try again.",
+    "retry": "Retry",
+    "refresh": "Refresh",
+    "loading": "Loading super admin dashboard...",
+    "systemOverview": "System Overview",
+    "totalCitizens": "Registered Citizens",
+    "totalAdmins": "Administrators",
+    "totalDistricts": "Districts",
+    "totalUpazilas": "Upazilas",
+    "totalMouzas": "Mouzas",
+    "totalParcels": "Land Parcels",
+    "totalVerificationCases": "Verification Cases",
+    "highAttention": "High Attention",
+    "criticalSignals": "Critical Signals",
+    "riskDistribution": "Risk Signal Distribution",
+    "casesByJurisdiction": "Cases by Jurisdiction",
+    "recentActivity": "Recent Activity",
+    "dataCompleteness": "Data Completeness",
+    "completenessGeometry": "Parcels with geometry",
+    "completenessOwnership": "Parcels with ownership",
+    "completenessChouhaddi": "Parcels with Chouhaddi",
+    "noData": "No data available",
+    "locations": "Location Reference Data",
+    "locationsNotice": "Administrative hierarchy used across the platform. All entries are synthetic demonstration data - not official administrative records.",
+    "allDivisions": "All divisions",
+    "addDistrict": "Add District",
+    "editDistrict": "Edit District",
+    "fieldNameEn": "Name (English)",
+    "fieldNameBn": "Name (Bengali)",
+    "fieldCode": "Code",
+    "fieldDivision": "Division",
+    "noDivision": "No division",
+    "noUpazilas": "No upazilas recorded for this district",
+    "noMouzas": "No mouzas recorded for this upazila",
+    "locationsLoadError": "Could not load location reference data.",
+    "locationsError": "The location change could not be applied. Please try again.",
+    "locationsDuplicate": "A district with this code already exists.",
+    "locationsRequired": "English name and code are required.",
+    "locationsCreated": "District created.",
+    "locationsUpdated": "District updated.",
+    "locationsDeleted": "District deleted.",
+    "locationsDeleteBlocked": "This district still has upazilas and cannot be deleted.",
+    "locationsConfirmDelete": "Delete district \"{{name}}\"? This cannot be undone."
+  },
+  "demoMode": {
+    "title": "Demo / Development Mode",
+    "subtitle": "Synthetic demonstration scenarios only - not an official government feature. Selecting a scenario opens its parcel for the full verification workflow.",
+    "prefillBadge": "Demo scenario: seller claim pre-filled from the synthetic scenario",
+    "loadError": "Could not load demo scenarios."
+  },
+  "map": {
+    "title": "Plot Location",
+    "loading": "Loading map...",
+    "selectPlot": "Select Plot",
+    "selectedPlot": "Selected Plot",
+    "plotDetails": "Plot Details",
+    "area": "Area",
+    "parcelId": "Parcel ID",
+    "syntheticData": "SYNTHETIC DEMONSTRATION DATA"
+  },
+  "disclaimer": {
+    "title": "Important Disclaimer",
+    "text": "BhoomiTech is a digital due-diligence assistance platform. Results are generated from the available dataset and predefined verification rules. This result does not constitute a legal ownership certificate, government verification, title opinion, or legal advice. Users should conduct appropriate legal and official verification before completing a land transaction."
+  },
+  "footer": {
+    "allRightsReserved": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us",
+    "brandDescription": "An informational pre-purchase land due-diligence platform designed to help citizens identify potential inconsistencies before a land transaction.",
+    "prototypeBadge": "Hackathon Prototype",
+    "official": {
+      "title": "Official Land & Registration Resources",
+      "sourceLabel": "Official Resources",
+      "externalLabel": "official external resource",
+      "notice": "For the latest official information, always refer to the relevant official source.",
+      "landInfo": "Land Information Portal",
+      "ministry": "Ministry of Land",
+      "mutation": "e-Mutation",
+      "recordMap": "Land Records & Maps",
+      "landTax": "Land Development Tax",
+      "laws": "Bangladesh Laws"
+    },
+    "support": {
+      "title": "Citizen Support & Contact",
+      "subtitle": "Government public-service helplines (not operated by BhoomiTech).",
+      "landHelplineNumber": "16122",
+      "landHelplineLabel": "Land Service Helpline",
+      "landHelplineNote": "Official land-service helpline",
+      "nationalHelplineNumber": "333",
+      "nationalHelplineLabel": "National Information & Service Helpline",
+      "nationalHelplineNote": "Government information & service",
+      "hours": "24/7",
+      "emergencyTitle": "For Emergencies",
+      "emergencyNumber": "999",
+      "emergencyLabel": "National Emergency Service"
+    },
+    "security": {
+      "title": "Security & Transparency",
+      "prototype": "BhoomiTech is a hackathon prototype and not an official government system.",
+      "dataNotice": "Verification uses synthetic demonstration data only.",
+      "informational": "Results are informational due-diligence aids, not legal advice.",
+      "disclaimerLink": "Legal Notice & Disclaimer",
+      "officialNoticeLink": "Official Resource Notice"
+    },
+    "disclaimer": {
+      "title": "Legal Notice & Disclaimer",
+      "text": "This platform provides informational due-diligence based on available records and is intended to identify potential inconsistencies. It is not a legal ownership certificate, government certification, or legal advice. Before purchasing or registering land, verify the relevant documents with the appropriate authority and, where necessary, a qualified legal professional.",
+      "governmentNotice": "Government information and service links belong to their respective official sources. BhoomiTech is a hackathon prototype and is not an official government system."
+    }
+  }
+}

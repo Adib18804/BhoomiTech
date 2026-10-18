@@ -1,0 +1,94 @@
+import api from '../utils/api';
+
+export interface RegisterData {
+  email: string;
+  mobile?: string;
+  full_name: string;
+  password: string;
+  confirm_password: string;
+  preferred_language: string;
+}
+
+export interface LoginData {
+  email: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+  user: {
+    id: number;
+    email: string;
+    full_name: string;
+    role: string;
+    preferred_language: string;
+  };
+}
+
+class AuthService {
+  async register(data: RegisterData): Promise<AuthResponse> {
+    const response = await api.post('/auth/register', data);
+    this.storeAuthData(response.data);
+    return response.data;
+  }
+
+  async login(data: LoginData): Promise<AuthResponse> {
+    const response = await api.post('/auth/login', data);
+    this.storeAuthData(response.data);
+    return response.data;
+  }
+
+  async adminLogin(data: LoginData): Promise<AuthResponse> {
+    const response = await api.post('/auth/admin/login', data);
+    this.storeAuthData(response.data);
+    return response.data;
+  }
+
+  async logout(): Promise<void> {
+    try {
+      await api.post('/auth/logout');
+    } finally {
+      this.clearAuthData();
+    }
+  }
+
+  async getCurrentUser() {
+    const response = await api.get('/auth/me');
+    return response.data;
+  }
+
+  private storeAuthData(data: AuthResponse) {
+    localStorage.setItem('access_token', data.access_token);
+    localStorage.setItem('refresh_token', data.refresh_token);
+    localStorage.setItem('user', JSON.stringify(data.user));
+    
+    // Update language preference
+    if (data.user.preferred_language) {
+      localStorage.setItem('language', data.user.preferred_language);
+    }
+  }
+
+  private clearAuthData() {
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('refresh_token');
+    localStorage.removeItem('user');
+  }
+
+  getUser() {
+    const userStr = localStorage.getItem('user');
+    return userStr ? JSON.parse(userStr) : null;
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('access_token');
+  }
+
+  getRole(): string | null {
+    const user = this.getUser();
+    return user?.role || null;
+  }
+}
+
+export default new AuthService();
