@@ -171,13 +171,13 @@ function _buildHtml(detail: ReportDetail): string {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>BhoomiTech Due-Diligence Report &mdash; ${detail.report_id}</title>
-  <link rel="icon" href="data:image/svg+xml;charset=utf-8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>" />
+  <link rel="icon" href="${window.location.origin}/favicon.png">
   <style>
     /* ---------- Base / reset ---------- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { -webkit-text-size-adjust: 100%; }
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
       font-size: 12.5px;
       line-height: 1.55;
       color: #1f2937;
@@ -239,6 +239,15 @@ function _buildHtml(detail: ReportDetail): string {
       gap: 20px;
     }
     .brand-left { display: flex; align-items: center; gap: 14px; }
+    .brand-logo-img {
+      height: 40px;
+      width: auto;
+      max-width: 180px;
+      display: block;
+      background: #fff;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
     .brand-logo {
       width: 48px;
       height: 48px;
@@ -293,8 +302,11 @@ function _buildHtml(detail: ReportDetail): string {
       margin: 20px 28px 0;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
+      background: ${_riskBg(riskLevel)};
+      border-radius: 8px;
+      padding: 12px 18px;
     }
     .risk-caption {
       font-size: 10.5px;
@@ -305,14 +317,15 @@ function _buildHtml(detail: ReportDetail): string {
     }
     .risk-badge {
       display: inline-block;
-      padding: 8px 20px;
+      padding: 11px 30px;
       border-radius: 999px;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: .02em;
-      border: 2px solid ${_riskColor(riskLevel)};
-      background: ${_riskBg(riskLevel)};
-      color: ${_riskColor(riskLevel)};
+      font-size: 16px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: ${_riskColor(riskLevel)};
+      color: #ffffff;
+      border: none;
     }
 
     /* ---------- Body / sections ---------- */
@@ -339,17 +352,18 @@ function _buildHtml(detail: ReportDetail): string {
     }
     th, td { padding: 7px 11px; border: 1px solid #e5e7eb; text-align: left; vertical-align: top; }
     thead th {
-      background: #065f46;
-      color: #fff;
-      font-weight: 600;
+      background: #d1fae5;
+      color: #065f46;
+      font-weight: 700;
       font-size: 11px;
-      letter-spacing: .02em;
-      border-color: #065f46;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+      border-color: #d1fae5;
     }
     tbody th { background: #f9fafb; font-weight: 600; width: 38%; color: #374151; }
-    td { color: #1f2937; }
+    td { color: #1f2937; background: #ffffff; }
     tbody tr:nth-child(even) td { background: #f9fafb; }
-    tbody tr:nth-child(even) th { background: #f3f4f6; }
+    tbody tr:nth-child(even) th { background: #f9fafb; }
     .empty-note { color: #6b7280; font-style: italic; }
 
     /* ---------- Lists ---------- */
@@ -400,7 +414,7 @@ function _buildHtml(detail: ReportDetail): string {
 
     /* ---------- Print ---------- */
     @media print {
-      @page { size: A4; margin: 14mm 12mm; }
+      @page { margin: 20mm; }
       body { background: #fff; padding: 0; font-size: 11px; }
       .no-print { display: none !important; }
 
@@ -449,10 +463,16 @@ function _buildHtml(detail: ReportDetail): string {
     <!-- Brand header -->
     <header class="brand-header">
       <div class="brand-left">
-        <div class="brand-logo">🌿</div>
+        <img
+          class="brand-logo-img"
+          src="${window.location.origin}/logo.png"
+          alt="BhoomiTech"
+          style="height: 40px;"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <span class="brand-logo" style="display: none;">🌿</span>
         <div>
           <div class="brand-name">BhoomiTech</div>
-          <div class="brand-tagline">CHECK BEFORE YOU BUY</div>
+          <div class="brand-tagline">Check Before You Buy</div>
         </div>
       </div>
       <div class="brand-meta">
@@ -552,7 +572,7 @@ function _buildHtml(detail: ReportDetail): string {
     <footer class="doc-footer">
       <div class="disclaimer">
         <strong>Disclaimer:</strong> This is a synthetic demonstration document. It is not an official
-        government certificate, nor does it carry any legal or administrative authority.
+        government certificate or legal advice.
       </div>
       <div class="footer-grid">
         <div><strong>Support:</strong> BhoomiTech Support</div>
