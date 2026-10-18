@@ -1,4 +1,5 @@
 import api from '../utils/api';
+import authService from './authService';
 
 export interface ReportNotice {
   not_certificate_en: string;
@@ -74,8 +75,15 @@ class ReportService {
     return response.data;
   }
 
-  /** Reports owned by the requesting user ("Reports"), privacy-scoped. */
+  /** Reports owned by the requesting user ("Reports"), privacy-scoped.
+   * When in Demo Mode (no live backend), returns an empty array so the
+   * Reports page shows its friendly "No reports generated yet" empty state
+   * rather than a red error box. Real sessions always call the API.
+   */
   async listMyReports(): Promise<ReportSummary[]> {
+    if (authService.isDemoMode()) {
+      return [];
+    }
     const response = await api.get('/reports');
     return response.data;
   }

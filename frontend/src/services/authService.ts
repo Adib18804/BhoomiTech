@@ -113,6 +113,15 @@ class AuthService {
     return !!localStorage.getItem('access_token');
   }
 
+  /**
+   * True for frontend-only demo sessions (the authService login bypass).
+   * Services gate their synthetic demo fixtures behind this check; real
+   * sessions never match and always hit the live backend.
+   */
+  isDemoMode(): boolean {
+    return !!localStorage.getItem('access_token')?.startsWith(DEMO_TOKEN_PREFIX);
+  }
+
   getRole(): string | null {
     const user = this.getUser();
     return user?.role || null;

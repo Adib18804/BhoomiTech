@@ -1,4 +1,6 @@
 import api from '../utils/api';
+import authService from './authService';
+import { buildDemoCases } from './dashboardService';
 
 export interface SellerClaim {
   claimed_owner_name: string;
@@ -77,8 +79,16 @@ class VerificationService {
     return response.data;
   }
 
-  /** Verification cases for the requesting citizen ("My Checks"), privacy-scoped. */
+  /** Verification cases for the requesting citizen ("My Checks"), privacy-scoped.
+   * When in Demo Mode (no live backend), returns synthetic cases from memory
+   * without touching the network. Real sessions always call the API.
+   */
   async listMyCases(): Promise<VerificationCaseSummary[]> {
+    if (authService.isDemoMode()) {
+      // buildDemoCases() returns DashboardCase objects, which are structurally
+      // identical to VerificationCaseSummary — same fields, same types.
+      return buildDemoCases() as VerificationCaseSummary[];
+    }
     const response = await api.get('/verification/cases');
     return response.data;
   }

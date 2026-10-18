@@ -1,4 +1,5 @@
-import api, { DEMO_TOKEN_PREFIX } from '../utils/api';
+import api from '../utils/api';
+import authService from './authService';
 
 export interface DashboardCase {
   case_id: string;
@@ -79,10 +80,10 @@ export interface AdminDashboard {
   };
 }
 
-// Synthetic dataset shown only to frontend-only demo sessions (see the
-// authService login bypass) so judges can explore the dashboard with no
-// backend. Mirrors the CitizenDashboard shape; all values are fake.
-function buildDemoCitizenDashboard(): CitizenDashboard {
+// Synthetic case list shown only to frontend-only demo sessions (see
+// authService.isDemoMode) so judges can explore with no backend. Mirrors the
+// VerificationCaseSummary / DashboardCase shape; all values are fake.
+export function buildDemoCases(): DashboardCase[] {
   const now = Date.now();
   const hoursAgo = (h: number) => new Date(now - h * 3600_000).toISOString();
   const demoCase = (
@@ -108,11 +109,17 @@ function buildDemoCitizenDashboard(): CitizenDashboard {
     has_report: hasReport,
   });
 
-  const cases = [
+  return [
     demoCase(1, 'REVIEW_REQUIRED', 'COMPLETED', 96, 90, true),
     demoCase(2, 'LOW_CONCERN', 'COMPLETED', 240, 232, true),
     demoCase(3, 'CRITICAL_SIGNAL', 'INITIATED', 6, null, false),
   ];
+}
+
+// Synthetic dataset shown only to frontend-only demo sessions so judges can
+// explore the dashboard with no backend. Mirrors the CitizenDashboard shape.
+function buildDemoCitizenDashboard(): CitizenDashboard {
+  const cases = buildDemoCases();
 
   return {
     totals: { total_cases: 3, completed_cases: 2, total_reports: 2 },
@@ -135,7 +142,7 @@ function buildDemoCitizenDashboard(): CitizenDashboard {
 
 class DashboardService {
   async getCitizenDashboard(): Promise<CitizenDashboard> {
-    if (localStorage.getItem('access_token')?.startsWith(DEMO_TOKEN_PREFIX)) {
+    if (authService.isDemoMode()) {
       return buildDemoCitizenDashboard();
     }
 
