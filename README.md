@@ -101,18 +101,16 @@ BhoomiTech/
 ```
 
 
+## 👥 User Roles
 
+1. **Citizen / Land Buyer:** Pre-purchase verification, report generation.
+2. **System Admin:** Case review, data management, and audit access scoped to their assigned upazila — enforced server-side (cross-jurisdiction requests are rejected with HTTP 403).
+3. **Super Admin:** Highest application-level privileges — full user & role management, location reference data, security monitoring, and audit trail. (This is an application role within the prototype, not a government role).
 
-
-## User Roles
-
-1. **Citizen/Land Buyer**: Pre-purchase verification, report generation
-2. **System Admin**: Case review, data management and audit access **scoped to
-   their assigned upazila** — enforced **server-side** (cross-jurisdiction
-   requests are rejected with HTTP 403, not merely hidden in the UI)
-3. **Super Admin**: Highest application-level privileges — full user & role
-   management, location reference data, security monitoring and audit trail.
-   This is an **application** role within the prototype, not a government role.
+**Demo Credentials for Testing (Local Backend):**
+- **Citizen:** `citizen1@example.com` / `Citizen@2026`
+- **Admin:** `admin1@bhoomitech.example` / `Admin@2026` (Login via `/admin/login`)
+- **Super Admin:** `superadmin@bhoomitech.example` / `SuperAdmin@2026` (Login via `/admin/login`)
 
 Every privileged mutation is recorded in the audit trail.
 
