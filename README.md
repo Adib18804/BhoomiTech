@@ -1,5 +1,7 @@
 # BhoomiTech
 
+![BhoomiTech Logo](frontend/public/logo.png)
+
 **"Check Before You Buy" | "জমি কেনার আগে যাচাই করুন"**
 
 BhoomiTech is a digital land due-diligence and pre-purchase verification platform that helps citizens and authorized institutional users review land identity, ownership information, historical records, mutation information, transaction history, case signals, government-interest signals, acquisition signals, and other available land-related information before proceeding with a transaction.
